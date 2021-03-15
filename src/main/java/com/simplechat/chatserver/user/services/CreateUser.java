@@ -1,11 +1,13 @@
-package com.simplechat.chatserver.domain.user.usecases;
+package com.simplechat.chatserver.user.services;
 
-import com.simplechat.chatserver.domain.user.User;
-import com.simplechat.chatserver.domain.user.UserRepository;
-import com.simplechat.chatserver.domain.user.UserRequest;
+import com.simplechat.chatserver.user.User;
+import com.simplechat.chatserver.user.UserRepository;
+import com.simplechat.chatserver.user.UserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import java.util.Optional;
 
 @Service
 public class CreateUser {
@@ -15,8 +17,16 @@ public class CreateUser {
 
     public User execute(UserRequest userRequest) throws Exception{
         validate(userRequest);
+        checkIfExistUserWithSameUserName(userRequest.getUserName());
         User user = setUser(userRequest);
         return userRepository.save(user);
+    }
+
+    private void checkIfExistUserWithSameUserName(String userName) throws Exception {
+        Optional<User> userOptional = userRepository.findByUserName(userName);
+        if(userOptional.isPresent()){
+            throw new Exception("User already exist");
+        }
     }
 
     private Boolean validate(UserRequest userRequest) throws Exception {

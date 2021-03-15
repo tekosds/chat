@@ -1,4 +1,4 @@
-package com.simplechat.chatserver.api.utilities;
+package com.simplechat.chatserver.utilities;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

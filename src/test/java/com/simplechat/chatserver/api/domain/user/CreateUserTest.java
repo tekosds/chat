@@ -1,11 +1,9 @@
 package com.simplechat.chatserver.api.domain.user;
 
-import com.simplechat.chatserver.domain.user.User;
-import com.simplechat.chatserver.domain.user.UserRepository;
-import com.simplechat.chatserver.domain.user.UserRequest;
-import com.simplechat.chatserver.domain.user.usecases.CreateUser;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import com.simplechat.chatserver.user.User;
+import com.simplechat.chatserver.user.UserRepository;
+import com.simplechat.chatserver.user.UserRequest;
+import com.simplechat.chatserver.user.services.CreateUser;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;
@@ -13,10 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -33,16 +27,14 @@ public class CreateUserTest {
     @Test
     public void createUserTestSuccessfully() throws Exception {
         UserRequest userRequest = new UserRequest();
-        userRequest.setUserName("steca");
+        userRequest.setUserName("steca123");
         userRequest.setPassword("password");
-        userRequest.setIsOnline(true);
 
         Mockito.when(userRepository.save(ArgumentMatchers.any(User.class))).thenReturn(UserFixture.getUser());
         User savedUser = createUser.execute(userRequest);
 
-        assertEquals("steca", savedUser.getUserName());
+        assertEquals("steca123", savedUser.getUserName());
         assertEquals("password", savedUser.getPassword());
-        assertEquals(true, savedUser.getIsOnline());
     }
 
     @Test
@@ -50,7 +42,6 @@ public class CreateUserTest {
         UserRequest userRequest = new UserRequest();
         userRequest.setUserName(null);
         userRequest.setPassword("password");
-        userRequest.setIsOnline(true);
         assertThrows(Exception.class, () -> {
             createUser.execute(userRequest);
         });

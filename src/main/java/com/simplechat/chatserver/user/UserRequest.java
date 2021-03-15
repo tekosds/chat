@@ -1,4 +1,4 @@
-package com.simplechat.chatserver.domain.user;
+package com.simplechat.chatserver.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -14,5 +14,4 @@ import lombok.NoArgsConstructor;
 public class UserRequest {
     private String userName;
     private String password;
-    private Boolean isOnline;
 }

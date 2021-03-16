@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Document
 @Data
@@ -24,7 +25,7 @@ public class Message {
     private String id;
     private String messageText;
     @Indexed(direction = IndexDirection.ASCENDING, unique = false)
-    private Timestamp sendAt;
+    private Date sendAt;
     @DBRef
     private User user;
 

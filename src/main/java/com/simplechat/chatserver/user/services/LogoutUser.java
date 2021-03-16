@@ -21,6 +21,7 @@ public class LogoutUser {
         }
         User user = userOptional.get();
         user.setIsOnline(false);
-        return userRepository.save(user);
+        userRepository.save(user);
+        return user;
     }
 }

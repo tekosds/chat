@@ -1,5 +1,6 @@
-package com.simplechat.chatserver.api.domain.user;
+package com.simplechat.chatserver.api.domain.user.services;
 
+import com.simplechat.chatserver.api.domain.user.UserFixture;
 import com.simplechat.chatserver.user.User;
 import com.simplechat.chatserver.user.UserRepository;
 import com.simplechat.chatserver.user.UserRequest;

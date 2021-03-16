@@ -22,6 +22,7 @@ public class LoginUser {
         }
         User user = userOptional.get();
         user.setIsOnline(true);
-        return userRepository.save(user);
+        userRepository.save(user);
+        return user;
     }
 }

@@ -1,6 +1,6 @@
-package com.simplechat.chatserver.api.domain.user;
+package com.simplechat.chatserver.user;
 
-import com.simplechat.chatserver.user.User;
+import com.simplechat.chatserver.user.domian.User;
 
 import java.util.Optional;
 

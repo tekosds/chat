@@ -1,4 +1,4 @@
-package com.simplechat.chatserver.message;
+package com.simplechat.chatserver.message.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

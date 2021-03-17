@@ -1,6 +1,6 @@
 package com.simplechat.chatserver.message.services;
 
-import com.simplechat.chatserver.message.Message;
+import com.simplechat.chatserver.message.domain.Message;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.simp.SimpMessagingTemplate;

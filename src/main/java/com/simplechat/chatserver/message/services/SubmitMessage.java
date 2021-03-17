@@ -1,10 +1,10 @@
 package com.simplechat.chatserver.message.services;
 
-import com.simplechat.chatserver.message.MessageRepository;
-import com.simplechat.chatserver.message.MessageRequest;
-import com.simplechat.chatserver.user.User;
-import com.simplechat.chatserver.user.UserRepository;
-import com.simplechat.chatserver.message.Message;
+import com.simplechat.chatserver.message.repository.MessageRepository;
+import com.simplechat.chatserver.message.dto.MessageRequest;
+import com.simplechat.chatserver.user.domian.User;
+import com.simplechat.chatserver.user.repository.UserRepository;
+import com.simplechat.chatserver.message.domain.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

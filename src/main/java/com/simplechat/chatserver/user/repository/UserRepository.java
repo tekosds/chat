@@ -1,5 +1,6 @@
-package com.simplechat.chatserver.user;
+package com.simplechat.chatserver.user.repository;
 
+import com.simplechat.chatserver.user.domian.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

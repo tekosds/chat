@@ -1,6 +1,6 @@
-package com.simplechat.chatserver.message;
+package com.simplechat.chatserver.message.domain;
 
-import com.simplechat.chatserver.user.User;
+import com.simplechat.chatserver.user.domian.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Document

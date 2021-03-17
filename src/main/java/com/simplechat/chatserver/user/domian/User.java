@@ -1,4 +1,4 @@
-package com.simplechat.chatserver.user;
+package com.simplechat.chatserver.user.domian;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

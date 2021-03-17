@@ -1,10 +1,9 @@
-package com.simplechat.chatserver.api.domain.user.services;
+package com.simplechat.chatserver.user.services;
 
-import com.simplechat.chatserver.api.domain.user.UserFixture;
-import com.simplechat.chatserver.user.User;
-import com.simplechat.chatserver.user.UserRepository;
-import com.simplechat.chatserver.user.UserRequest;
-import com.simplechat.chatserver.user.services.CreateUser;
+import com.simplechat.chatserver.user.UserFixture;
+import com.simplechat.chatserver.user.domian.User;
+import com.simplechat.chatserver.user.repository.UserRepository;
+import com.simplechat.chatserver.user.dto.UserRequest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentMatchers;

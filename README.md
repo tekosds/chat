@@ -27,6 +27,7 @@ Also chat application can be improved by implementing new features like private 
 - Spring Boot
 - MongoDB
 - Maven
+- React
 
 ## Run
 - Run command `docker-compose up` from chat root directory

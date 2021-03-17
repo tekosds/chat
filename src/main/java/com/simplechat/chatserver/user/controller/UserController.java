@@ -1,5 +1,6 @@
 package com.simplechat.chatserver.user.controller;
 
+import com.simplechat.chatserver.user.dto.UserDTO;
 import com.simplechat.chatserver.user.dto.UserRequest;
 import com.simplechat.chatserver.utilities.ResponseUtil;
 import com.simplechat.chatserver.user.services.CreateUser;
@@ -29,16 +30,16 @@ public class UserController {
 
     @PostMapping("/users")
     public ResponseEntity create(@RequestBody UserRequest request) throws Exception {
-        return ResponseUtil.ok(createUser.execute(request));
+        return ResponseUtil.ok(new UserDTO(createUser.execute(request)));
     }
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody UserRequest request) throws Exception {
-        return ResponseUtil.ok(loginUser.execute(request));
+        return ResponseUtil.ok(new UserDTO(loginUser.execute(request)));
     }
 
     @PostMapping("/logout")
     public ResponseEntity logout(@RequestBody UserRequest request) throws Exception {
-        return ResponseUtil.ok(logoutUser.execute(request));
+        return ResponseUtil.ok(new UserDTO(logoutUser.execute(request)));
     }
 }

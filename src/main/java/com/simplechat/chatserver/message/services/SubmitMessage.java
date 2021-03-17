@@ -23,9 +23,11 @@ public class SubmitMessage {
 
     @Autowired NotificationServices notificationServices;
 
-    public void execute(MessageRequest request) throws Exception {
+    public Message execute(MessageRequest request) throws Exception {
         Message message = setMessage(request);
-        notificationServices.sendMessage(messageRepository.save(message));
+        message = messageRepository.save(message);
+        notificationServices.sendMessage(message);
+        return message;
     }
 
     private Message setMessage(MessageRequest request) throws Exception {
